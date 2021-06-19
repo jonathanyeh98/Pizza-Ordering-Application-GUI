@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.MainViewController">
+   <top>
+      <Pane prefHeight="700.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox layoutX="4.0" layoutY="4.0" prefHeight="160.0" prefWidth="592.0">
+               <children>
+                  <VBox prefHeight="160.0" prefWidth="199.0" spacing="10.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pizza">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <ComboBox fx:id="PizzaType" prefWidth="150.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Size">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <ComboBox fx:id="PizzaSize" prefWidth="150.0" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <ImageView fx:id="Pizza" fitHeight="160.0" fitWidth="266.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </HBox>
+            <HBox layoutX="26.0" layoutY="160.0" prefHeight="440.0" prefWidth="420.0" spacing="10.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="140.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Toppings">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <ListView fx:id="Toppings" prefHeight="396.0" prefWidth="133.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="140.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Selected Toppings">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <ListView fx:id="SelectedToppings" prefHeight="398.0" prefWidth="133.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="140.0" spacing="20.0">
+                     <children>
+                        <Button fx:id="AddTopping" mnemonicParsing="false" onAction="#addToppings" prefHeight="25.0" prefWidth="115.0" text="ADD Topping" />
+                        <Button fx:id="RemoveTopping" mnemonicParsing="false" onAction="#removeToppings" prefHeight="25.0" prefWidth="115.0" text="REMOVE Topping" />
+                        <Button fx:id="ClearSelection" mnemonicParsing="false" onAction="#clearSelection" prefHeight="25.0" prefWidth="115.0" text="Clear Selection">
+                           <VBox.margin>
+                              <Insets top="200.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" top="30.0" />
+                     </padding></VBox>
+               </children>
+            </HBox>
+            <VBox layoutX="446.0" layoutY="160.0" prefHeight="440.0" prefWidth="140.0" spacing="20.0">
+               <children>
+                  <Button fx:id="AddOrder" mnemonicParsing="false" onAction="#addOrder" prefHeight="25.0" prefWidth="115.0" text="Add To Order" />
+                  <Button fx:id="ShowOrder" mnemonicParsing="false" onAction="#showOrder" prefHeight="25.0" prefWidth="115.0" text="Show Order" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="150.0" />
+               </padding></VBox>
+            <TextArea fx:id="AddedOutput" layoutY="605.0" prefHeight="95.0" prefWidth="600.0" />
+         </children>
+      </Pane>
+   </top>
+</BorderPane>
